@@ -17,6 +17,6 @@ urlpatterns = [
     url(r'^invitations/', include(
         'invitations.urls', namespace='invitations')),
     url(r'^admin/', admin.site.urls),
-    url(r'^clips/', include('clips.urls')),
+    # url(r'^clips/', include('clips.urls')), @NOTE check this later
     url(r'^email_csv/', include('email_csv.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

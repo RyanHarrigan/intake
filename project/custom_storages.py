@@ -4,7 +4,7 @@ from django.core.files.storage import get_storage_class
 
 
 class MediaStorage(S3Boto3Storage):
-    bucket_name = settings.MEDIA_BUCKET
+    bucket_name = settings.AWS_MEDIA_BUCKET
     file_overwrite = False
     querystring_auth = True
 

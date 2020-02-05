@@ -18,16 +18,18 @@ DATABASES = {
         'PASSWORD': os.environ.get('PURGED_DATABASE_PASSWORD'),
     }
 }
+
+# @TODO check out the code around this var. It smells like SQL Injection
 CLIPS_DATABASE_ALIAS = 'purged'
 
 # AWS Credentials for Static Files
-AWS_ACCESS_KEY_ID = os.environ.get('AWS_ID')
-AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET')
-AWS_STORAGE_BUCKET_NAME = os.environ.get('STATIC_BUCKET')
+AWS_ACCESS_KEY_ID = os.environ.get('PROD_AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('PROD_AWS_SECRET_KEY')
+AWS_STORAGE_BUCKET_NAME = os.environ.get('PROD_AWS_STORAGE_BUCKET_NAME')
 # settings for media files
 MEDIA_ROOT = ''
 DEFAULT_FILE_STORAGE = 'project.custom_storages.MediaStorage'
-MEDIA_BUCKET = os.environ.get('MEDIA_BUCKET')
+AWS_MEDIA_BUCKET = os.environ.get('PROD_AWS_MEDIA_BUCKET')
 # settings for static files
 COMPRESS_URL = 'https://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
 STATIC_URL = COMPRESS_URL

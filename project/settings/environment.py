@@ -6,7 +6,7 @@ DEFAULT_HOST = os.environ.get('DEFAULT_HOST', 'http://localhost:8000')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # Email settings
-EMAIL_BACKEND = "sgbackend.SendGridBackend"
+EMAIL_BACKEND = = os.environ.get("EMAIL_BACKEND")
 SENDGRID_API_KEY = os.environ.get("SENDGRID_API_KEY")
 MAIL_DEFAULT_SENDER = os.environ.get("MAIL_DEFAULT_SENDER", "admin@localhost")
 DEFAULT_FROM_EMAIL = MAIL_DEFAULT_SENDER

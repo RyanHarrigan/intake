@@ -8,6 +8,7 @@ from intake.models import FormSubmission
 
 @login_required
 def email_csv(request):
+    # @NOTE: check the clips app, it may need a security update
     if not request.user.has_perm('clips.change_clip'):
         return HttpResponseForbidden()
     now = datetime.datetime.now()

@@ -1,6 +1,7 @@
 from url_robots.utils import url
 from . import views
 
+# @NOTE: check for SQL Injection on these urlss
 urlpatterns = [
     url(r'^$', views.ClipCreateView.as_view(),
         name='clips-create', robots_allow=False),
